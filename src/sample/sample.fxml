@@ -1,7 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
 
-
-<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.121" fx:controller="sample.Controller">
-</GridPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller">
+    <top>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <MenuBar prefHeight="0.0" prefWidth="600.0">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Plik">
+                            <items>
+                                <MenuItem fx:id="file" mnemonicParsing="false" onAction="#onFileClick" text="Dodaj DF (.csv)" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Edit">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#onGroupbyClick" text="Grupuj po" />
+                                <MenuItem fx:id="max" mnemonicParsing="false" onAction="#onMaxClick" text="Maksimum" />
+                                <MenuItem fx:id="min" mnemonicParsing="false" onAction="#onMinClick" text="Minimum" />
+                                <MenuItem fx:id="var" mnemonicParsing="false" onAction="#onVarClick" text="Wariancja" />
+                                <MenuItem fx:id="sum" mnemonicParsing="false" onAction="#onSumClick" text="Suma" />
+                                <MenuItem fx:id="std" mnemonicParsing="false" onAction="#onStdClick" text="Odchylenie stand" />
+                                <MenuItem fx:id="mean" mnemonicParsing="false" onAction="#onMeanClick" text="Średnia" />
+                                <MenuItem fx:id="med" mnemonicParsing="false" onAction="#onMedClick" text="Mediana" />
+                                <MenuItem mnemonicParsing="false" onAction="#onChartClick" text="Rysuj wykres" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <ListView fx:id="listView" prefHeight="404.0" />
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
