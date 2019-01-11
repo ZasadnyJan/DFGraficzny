@@ -118,7 +118,7 @@ public class DateTimeValue extends Value{
             tmp = tmp1.parse(s);
         } catch(ParseException e)
         {
-            System.err.println("Tworzenie daty ze stringa nie zadziałało.");
+            System.err.println("Parsing failed.");
             e.printStackTrace();
         }
         return new DateTimeValue(tmp);

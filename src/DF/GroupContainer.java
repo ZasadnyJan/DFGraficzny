@@ -36,13 +36,11 @@ public class GroupContainer implements Groupby
     public DataFrame DfCreatorForOperations()
     {
         DataFrame result = new DataFrame();
-        //poniższy fragment kodu wyciąga z hashmapy jeden rekord jako Entry
         HashMap.Entry<Value[], DataFrame> nameAndTypeGetter = null;
         for(HashMap.Entry<Value[], DataFrame> entryGetter: group.entrySet()) {
             nameAndTypeGetter = entryGetter;
             break;
         }
-        //vvv tworzy puste kolumny właściwych typów w wynikowym df vvv
         originalIndicesOfColumsIncludedInResult = new int[nameAndTypeGetter.getValue().columns.size()];
         int indexInArrayOfOriginalIndices = 0;
         for(int i=0;i<nameAndTypeGetter.getValue().columns.size(); i++)

@@ -109,7 +109,7 @@ public class Column implements Cloneable
         try {
             return (Column) super.clone();
         } catch (CloneNotSupportedException e) {
-            System.out.println(this.getClass().getName() + " nie implementuje Cloneable...");
+            System.out.println("Cloneable nie jest zaimplementowane dla tego typu");
             return null;
         }
     }

@@ -8,7 +8,7 @@ public class SparseDataFrame extends DataFrame {
 
     public SparseDataFrame(String[] colnames, Class<? extends Value> coltype, Value hidden)
     {
-        //columns = new ArrayList<>();
+
         for(int i=0; i<colnames.length;i++)
             columns.add(new COOColumn(colnames[i],coltype));
         hide = hidden;
@@ -16,13 +16,11 @@ public class SparseDataFrame extends DataFrame {
 
     public SparseDataFrame(DataFrame df,Value hidden)
     {
-        //columns = new ArrayList<>();
+
         hide = hidden;
         for(int i=0;i<df.columns.size(); i++)
         {
             columns.add(new COOColumn(df.columns.get(i).columnName,df.columns.get(0).columnType));
-            //columns.set(i,df.columns.get(i));
-            //columns.get(i).ColumnToCOOLColumn(hide);
             Column temp = df.columns.get(i);
             columns.set(i,temp.ColumnToCOOLColumn(hide));
         }
