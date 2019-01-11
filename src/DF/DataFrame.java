@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 public class DataFrame {
 
-    ArrayList<Column> columns;
+    public ArrayList<Column> columns;
 
     public DataFrame() {
         columns = new ArrayList<>();
@@ -225,7 +225,7 @@ public class DataFrame {
     }
 
 
-    /*public static void main(String[] argv) {
+    public static void main(String[] argv) {
         Class<? extends Value>[] types = (Class<? extends Value>[]) new Class<?>[4];
         types[0] = StringValue.class;
         types[1] = DateTimeValue.class;
@@ -245,5 +245,5 @@ public class DataFrame {
         test2.groupby(new String[]{"id","date"}).std().Display();
         test2.groupby(new String[]{"id","date"}).var().Display();
         test2.groupby(new String[]{"id","date"}).sum().Display();
-    }*/
+    }
 }
